@@ -13,11 +13,12 @@ skills/novel/
 ### 用 `npx skill`
 
 ```powershell
-$env:SKILL_BASE_URL='https://github.com/Z-Shi-Bo/novel-skill/tree/main'
+$env:SKILL_BASE_URL='https://raw.githubusercontent.com/Z-Shi-Bo/novel-skill/main/'
 npx skill skills/novel
 ```
 
-这会把 `skills/novel/` 作为远程 skill 包下载。
+这会把 `skills/novel/` 作为远程 skill 包下载。  
+这里用 raw GitHub 地址，是为了避开 GitHub tree API 的匿名 rate limit。
 
 ### 本地 CLI 使用
 
