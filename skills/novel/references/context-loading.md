@@ -44,7 +44,7 @@
 
 ## Context Pack
 
-如果需要结构化上下文，使用 `build_context.py` 输出：
+如果需要结构化上下文，直接在当前回复里整理并落盘一个最小结构块：
 
 - task_type
 - target_chapter
