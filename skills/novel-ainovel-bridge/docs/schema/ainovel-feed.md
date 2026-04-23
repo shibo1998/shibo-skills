@@ -120,6 +120,23 @@
 - `active_hooks`
 - `state_focus`
 
+## sync payload 最小字段
+
+当桥接层执行 `sync` 时，最少应有一份 accepted payload，至少包含：
+
+- `chapter`
+- `accepted`（必须为 `true`）
+- `summary`
+- `state_updates`
+- `hook_updates`
+
+推荐附加：
+
+- `timeline_events`
+- `relationship_changes`
+- `source_paths`
+- `accepted_at`
+
 ## sync 回流字段建议
 
 当 AI-Novel 产出 accepted / final 结果时，优先回流：
@@ -135,6 +152,7 @@
 - draft 正文
 - polish 中间态
 - 未 accepted 的 review 结果
+- 没有 accepted 标记的 payload
 
 ## 同步原则
 

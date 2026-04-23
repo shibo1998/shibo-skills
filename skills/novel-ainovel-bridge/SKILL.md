@@ -106,6 +106,27 @@ argument-hint: "[export|sync|resume] [项目或路径]"
 → 标注同步范围与未解决风险
 ```
 
+## sync 输入契约
+
+为了让 `sync` 可重复执行，默认要求用户提供或项目中可定位到一组 **accepted result payload**。
+
+最少应包含：
+
+- `chapter`: 章节号
+- `accepted`: `true`
+- `summary`: 本章摘要
+- `state_updates`: 当前状态变化列表
+- `hook_updates`: 伏笔新增 / 推进 / 回收列表
+
+推荐附加：
+
+- `timeline_events`
+- `relationship_changes`
+- `source_paths`
+- `accepted_at`
+
+如果只有 draft / polish 中间态，而没有 accepted / final 结果，必须拒绝回流。
+
 ## 读取优先级
 
 ### export 时
@@ -136,6 +157,7 @@ argument-hint: "[export|sync|resume] [项目或路径]"
 - `foreshadows.json`：只导出仍然有效的 planted / hinted / resolved 信息
 - `chapter_context/chNNN.yaml`：必须围绕本章必须保留、必须回避、情绪目标、hook 目标来写
 - `overrides/*`：用于把项目级文风和审稿偏好交给 AI-Novel
+- `sync` 时若没有 accepted payload，不要猜测状态更新
 
 ## 回流原则
 
@@ -150,6 +172,7 @@ argument-hint: "[export|sync|resume] [项目或路径]"
 - export 模式：先说明将导出哪些 feed 文件，再执行
 - sync 模式：先说明将同步哪些控制面文件，再执行
 - 如发现缺口：明确列出缺的文件，不假装能继续
+- 如只有 draft / polish 中间态：明确拒绝，并指出缺少 accepted result payload
 
 ## 参考资源
 

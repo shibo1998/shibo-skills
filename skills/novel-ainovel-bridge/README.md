@@ -45,11 +45,13 @@ npx skills add https://github.com/shibo1998/shibo-skills --skill novel-ainovel-b
 ### sync
 
 1. 确认 AI-Novel 侧已经得到 accepted / final 结果
-2. 再执行 bridge 回流控制面
+2. 准备 accepted payload（至少包含 `chapter`、`accepted=true`、`summary`、`state_updates`、`hook_updates`）
+3. 再执行 bridge 回流控制面
 
 桥接层不负责写正文，它只负责：
 - 把控制面转成 AI-Novel 可消费格式
 - 把 AI-Novel accepted 结果回流到控制面
+- 拒绝把 draft / polish 中间态误当成 canon
 
 ## 主要产物
 

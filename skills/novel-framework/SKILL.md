@@ -86,7 +86,7 @@ projects/{novel-slug}/
 6. `state`：状态维护
 7. `diagnose`：框架级或项目级诊断
 8. `research`：联网考据
-9. `export`：导出通用上下文包 / chapter context
+9. `export`：导出通用上下文包 / chapter context / framework bundle
 10. `resume`：恢复框架规划现场
 
 ## init 快速通道
@@ -179,11 +179,51 @@ projects/{novel-slug}/
 → 导出通用上下文包
 ```
 
+## export 产物约定
+
+`export` 默认只导出控制面，不导出正文。
+
+推荐导出两类产物：
+
+### 1. 章节上下文包
+
+路径：
+
+- `07_exports/context_packs/chNNN_context.yaml`
+
+最少包含：
+
+- `chapter`
+- `title`
+- `must_keep`
+- `must_avoid`
+- `emotion_target`
+- `hook_goal`
+- `continuity_notes`
+
+### 2. 框架总包
+
+路径：
+
+- `07_exports/framework_bundle.md`
+
+至少汇总：
+
+- brief 核心承诺
+- story bible 核心规则
+- 角色主表
+- 卷弧章结构
+- 当前状态卡
+- 伏笔池
+
+如果用户没指定导出目标，优先导出章节上下文包；如果用户明确说“导出整本框架”，再补框架总包。
+
 默认规则：
 
 - 未初始化项目时，不直接落控制面文件之外的内容
 - 不写任何正文 prose
 - 未有章纲时，不生成 chapter context
+- `export` 只导出控制面，不导出 prose
 - 框架未诊断通过时，不建议切到正文创作
 
 ## 上下文装配规则

@@ -14,6 +14,7 @@
 - “只做小说整体框架”
 - “不要正文，只要设定和大纲”
 - “只做人物、钩子、故事情节骨架”
+- “只导出 chapter context / framework bundle 给后续流程”
 
 ## 与 `novel` 的区别
 
@@ -36,6 +37,15 @@ npx skills add shibo1998/shibo-skills --skill novel-framework
 ```powershell
 npx skills add https://github.com/shibo1998/shibo-skills --skill novel-framework
 ```
+
+## 导出产物
+
+默认可导出：
+
+- `07_exports/context_packs/chNNN_context.yaml`
+- `07_exports/framework_bundle.md`
+
+它们都属于控制面交付物，不包含正文。
 
 ## 内容
 
