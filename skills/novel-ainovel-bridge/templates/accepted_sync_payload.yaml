@@ -1,0 +1,16 @@
+chapter: {{CHAPTER_NO}}
+accepted: true
+summary: "{{SUMMARY}}"
+state_updates:
+  - "{{STATE_UPDATE_1}}"
+  - "{{STATE_UPDATE_2}}"
+hook_updates:
+  - "{{HOOK_UPDATE_1}}"
+  - "{{HOOK_UPDATE_2}}"
+timeline_events:
+  - "{{TIMELINE_EVENT_1}}"
+relationship_changes:
+  - "{{REL_CHANGE_1}}"
+source_paths:
+  - "{{SOURCE_PATH_1}}"
+accepted_at: "{{ACCEPTED_AT}}"
